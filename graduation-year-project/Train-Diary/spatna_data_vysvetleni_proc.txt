@@ -1,0 +1,24 @@
+# Tento soubor obsahuje tréninkové jednotky
+# Formát: datum aktivita delkaTrvani narocnost
+# Záznamy s chybami budou použity pro testování
+
+2024-10-12 plavani 100 7
+2024-10-13 posilovna 90 8
+2024-10-14 plavco 45 5      # Chybná aktivita
+2024-10-15 plavani -50 3    # Záporná délka trvání
+2024-10-16 posilovna 60 12  # Neplatná náročnost
+2024-10-17 strecink 30 2
+2024-10-18 masaz 0 5         # Nulová délka trvání
+2024-10-19 sauna 90 9
+2024-10-20 plavani 70 11     # Neplatná náročnost
+2024-10-21 2024-10-21 plavani 50 6  # Chybějící datum
+2024-10-22 posilovna abc 5   # Neplatný formát
+2024-10-23 strecink 45 0     # Nulová náročnost
+2024-10-24 masaz 30 4
+2024-10-25 sauna 80 10
+2024-10-26 plavani 75 3
+2024-10-27 plavani 60        # Chybí náročnost
+2024-10-28 strecink 120 6
+2024-10-29 masaz 50 9
+2024-10-30 sauna 45 -1       # Záporná náročnost
+2024-10-31 2024-10-32 plavani 90 5  # Neplatné datum

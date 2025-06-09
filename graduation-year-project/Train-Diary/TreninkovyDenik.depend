@@ -1,0 +1,98 @@
+# depslib dependency file v1.0
+1730635478 source:c:\users\rgrme\onedrive\desktop\projects\treninkovydenik\main.c
+	"gvid.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<limits.h>
+	<time.h>
+
+1672242203 c:\users\rgrme\onedrive\desktop\projects\treninkovydenik\gvid.h
+
+1730635711 source:c:\users\rgrme\onedrive\desktop\projects\treninkovydenik\tdenik.c
+
+1742065725 source:c:\users\rgrme\onedrive\desktop\treninkovydenik\tdenik.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"TDenik.h"
+
+1742065725 c:\users\rgrme\onedrive\desktop\treninkovydenik\tdenik.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1742066057 source:c:\users\rgrme\onedrive\desktop\treninkovydenik\main.c
+	"gvid.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<limits.h>
+	<time.h>
+	"TDenik.h"
+
+1672242203 c:\users\rgrme\onedrive\desktop\treninkovydenik\gvid.h
+
+1742069657 source:c:\users\rgrme\onedrive\desktop\vpi_project\treninkovydenik\main.c
+	"gvid.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<limits.h>
+	<time.h>
+	"TDenik.h"
+
+1672245803 c:\users\rgrme\onedrive\desktop\vpi_project\treninkovydenik\gvid.h
+
+1742069325 c:\users\rgrme\onedrive\desktop\vpi_project\treninkovydenik\tdenik.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1742069325 source:c:\users\rgrme\onedrive\desktop\vpi_project\treninkovydenik\tdenik.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"TDenik.h"
+
+1742069657 source:c:\users\rgrme\onedrive\desktop\train-diary\main.c
+	"gvid.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<limits.h>
+	<time.h>
+	"TDenik.h"
+
+1672245803 c:\users\rgrme\onedrive\desktop\train-diary\gvid.h
+
+1742069325 c:\users\rgrme\onedrive\desktop\train-diary\tdenik.h
+	<stdio.h>
+	<string.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1742069325 source:c:\users\rgrme\onedrive\desktop\train-diary\tdenik.c
+	<stdio.h>
+	<ctype.h>
+	<string.h>
+	"TDenik.h"
+
