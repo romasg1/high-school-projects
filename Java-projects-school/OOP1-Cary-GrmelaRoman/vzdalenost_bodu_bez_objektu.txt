@@ -1,0 +1,69 @@
+
+import java.util.Locale;
+import java.util.Scanner;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+
+/**
+ *
+ * @author roman
+ */
+public class cary {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        sc.useLocale(Locale.US);
+        
+        double length = 0, x, y;
+        
+        System.out.println("Ukonci zadanim souradnic neciselnou hodnotou...");
+        System.out.print("Zadej x-souradnici bodu: ");
+        
+        if(!sc.hasNextDouble()){
+            System.out.println("na vstupu neni double...");
+        }
+        
+        x=sc.nextDouble();
+        System.out.print("zadej y-souradnici bodu: ");
+        if(!sc.hasNextDouble()){
+            System.out.println("Na vstupu neni double, chybi mi y-souradnice...");
+    }
+        y=sc.nextDouble();
+    
+        double x2, y2;
+        
+        System.out.print("Zadej x-souradinci dalsiho bodu: ");
+        if(!sc.hasNextDouble()){
+            System.out.println("Smula vole...");
+            return;
+        }
+        while(sc.hasNextDouble()){
+            
+            x2=sc.nextDouble();
+        
+            System.out.print("Zadej y-souradnicidalsiho bodu: ");
+        if(!sc.hasNextDouble()){
+            System.out.println("Neni y-souradnice na vstupu...");
+            return;
+        }
+            
+        y2=sc.nextDouble();
+        length=length + Math.sqrt((x-x2)*(x-x2) + (y-y2)*(y-y2));
+            System.out.println("Delka je " + length);
+            
+        length=0;//vynulovat...
+            
+        x=x2;//aby to zase pocitalo vzdalenost od toho dalsiho bodu
+        y=y2;//v praxi: zadam 3. bod tak chci vzdalenost od 2.
+        
+        System.out.println("Pokracujem..uvidis vzdalenost zadaneho bodu od posledniho");
+        System.out.print("Zadej x-souradnici dalsiho bodu: ");
+        }//while
+}
+}

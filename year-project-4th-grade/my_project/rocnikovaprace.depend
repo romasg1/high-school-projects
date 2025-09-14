@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1685731518 source:c:\users\rgrme\onedrive\desktop\ro»nÕkov¡ pr¡ce\rocnikovaprace\main.c
+	<stdbool.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1685731520 source:c:\users\rgrme\onedrive\desktop\programming\gvid_projects-important-on-github\gvid_4g_prog_project_jazyk_c\everything\my_project\main.c
+	<stdbool.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

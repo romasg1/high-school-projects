@@ -1,0 +1,38 @@
+Nazev: TEST Z NEMECKEHO JAZYKA 01
+Otazka 1zN: Jake je hlavni mesto Nemecka?
+#TODO: vyber spravnou odpoved..
+Hodnota: 5
+Spravne:Berlin
+Spatne: Mnichov
+Spatne: Hamburk
+Spatne: Oslo
+Otazka 1zN: Jaky je minuly tvar v nemcine pro sloveso "gehen" (jit)?
+Hodnota: 10
+Spravne: ging
+Spatne: geeeeh
+Spatne: gehe
+Spatne: geht
+Otazka 1zN: Preloz slovo pes do nemciny.
+Hodnota: 5
+Spravne: der Hund
+Spatne: die Katze
+Spatne: der Kellner
+Spatne: das Poster
+Otazka 1zN: Minuly cas slovesa machen?
+Hodnota: 10
+Spravne: gemacht
+Spatne: gearbeitet
+Spatne: gegege
+Spatne: gebraucht
+Otazka 1zN: Minuly cas slovesa brauchen?
+Hodnota: 10
+Spravne: gebraucht
+Spatne: gearbeitet
+Spatne: gegege
+Spatne: gemacht
+Otazka 1zN: Jak se rekne stul?
+Hodnota: 5
+Spravne: der Tisch
+Spatne: der Arbeitsnehmer
+Spatne: das Auto
+Spatne: die Frau

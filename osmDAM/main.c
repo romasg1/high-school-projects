@@ -1,0 +1,105 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+
+typedef struct {
+char ypozice[8];
+bool jevradku[8];
+bool jesikmozleva[15];
+bool jesikmozprava[15];
+} TSach;
+
+bool jeOhrozena(TSach *plocha, int x, int y){
+return (plocha->jevradku[y] ||
+plocha->jesikmozleva[x+y] ||
+plocha->jesikmozprava[x-y+7]);
+}
+
+
+void polozDamu(TSach* plocha, int x, int y){
+  plocha->ypozice[x]=y+1;
+  plocha->jevradku[y]=true;
+  plocha->jesikmozleva[x+y]=true;
+  plocha->jesikmozprava[x-y+7]=true;
+}
+
+
+void vykresliReseni(TSach* plocha, FILE *f)
+{
+fprintf(f, "---------------------------------\n");
+for (int i = 0; i < 8; i++) {
+for (int j = 0; j < 8; j++) {
+if (plocha->ypozice[j] == 8 - i) {
+fprintf(f, "| * ");
+} else {
+fprintf(f, "|   ");
+}
+}
+fprintf(f, "|   \n");
+fprintf(f, "---------------------------------\n");
+}
+/**
+
+**/
+}
+
+
+void zapamatuj(TSach* plocha, FILE* f){
+ int i;
+ fprintf(f, "\n");
+ for(i=0; i<8; i++){
+    fprintf(f, "%d ", plocha->ypozice[i]);
+    //fprintf(f, "\n");
+ }
+ fprintf(f, "\n");
+ vykresliReseni(plocha, f);
+ fprintf(f, "\n");
+}
+
+
+void odeberDamu(TSach* plocha, int x, int y){
+  plocha->ypozice[x]=0;
+  plocha->jevradku[y]=false;
+  plocha->jesikmozleva[x+y]=false;
+  plocha->jesikmozprava[x-y+7]=false;
+}
+
+
+void zkusSloupec(TSach *plocha, int x, FILE* f)
+{
+   int y;
+for (y=0; y<=7; y++) {
+if (!jeOhrozena(plocha, x, y)) {
+polozDamu(plocha, x, y);
+if (x == 7)
+zapamatuj(plocha, f);
+else
+  zkusSloupec(plocha, x + 1, f);
+
+  odeberDamu(plocha, x, y);
+}
+ }
+  }
+
+
+
+int main()
+{
+  FILE* f=fopen("hotovo.txt", "w");
+  if(f== NULL)return -1;
+
+    TSach plocha = {
+.ypozice = {0},
+.jevradku = {false},
+.jesikmozleva = {false},
+.jesikmozprava = {false},
+};
+
+int x=0;
+zkusSloupec(&plocha, x ,f);
+
+    fclose(f);
+    return 0;
+}
+

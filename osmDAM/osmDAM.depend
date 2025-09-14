@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1705167826 source:c:\users\rgrme\onedrive\desktop\jazyk_c\ivt 2023-2024\osmdam\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+
+1705167828 source:c:\users\rgrme\onedrive\desktop\programming\gvid_projects-important-on-github\jazyk_c_projects_school\osmdam\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

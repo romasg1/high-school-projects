@@ -1,0 +1,107 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/*NAJDI CHLAPCE S NEJHORSI ZNAMKOU Z FYZIKY....SERADIM OD NEJHORSIHO PO NEJLEPSI PODLE FYZIKY...PAK VYHLEDAM PRVNIHO CHLAPCE...*/
+
+typedef struct{
+char jmeno[15];
+int pohlavi, m, cj, f;
+float prumer;
+}TZAK;
+
+
+int nacti(TZAK p[], int n, FILE *vstup){
+int i=0;
+while(i<n && fscanf(vstup, "%14s%d%d%d%d",
+      p[i].jmeno, &p[i].pohlavi, &p[i].m, &p[i].cj, &p[i].f) == 5){
+      p[i].prumer = (p[i].m + p[i].cj + p[i].f)/3.;/*POZOR!!!!! I++ MUSI NASTAT AZ PO TOMHLE PRIKAZU!!!!!!!...A MUSIM DELIT REALNOU TROJKOU*/
+      i++;
+      }
+      return i;
+}
+
+
+void vypis(TZAK p[], int n){
+  printf("Jmeno      pohlavi        m       cj      f      prumer\n");
+for(int i=0; i<n; i++){
+  printf("%-13s%d            %d        %d      %d      %.2f\n", p[i].jmeno, p[i].pohlavi, p[i].m, p[i].cj, p[i].f, p[i].prumer);
+}
+}
+
+
+
+void serad(TZAK p[], int n){
+for(int d=1; d<n; d++){
+  int i=d;
+  TZAK vkladany = p[d];
+  while(i>0 && p[i-1].f < vkladany.f){
+    p[i]=p[i-1];
+    i--;
+  }
+  p[i]=vkladany;
+}
+}
+
+
+
+int najdiZaka(TZAK p[], int n, int klic){
+int i=0;
+while(i<n && p[i].pohlavi != klic){
+  i++;
+}
+
+if(i<n){
+  return i;
+}
+
+return -1;
+}
+
+
+
+int main()
+{
+    char nazev[15];
+    printf("zadej nazev souboru: ");
+    scanf("%14s", nazev);
+
+    FILE *vstup = fopen(nazev, "r");
+
+    if(vstup == NULL){
+      printf("Neotevrel..");
+      return -1;
+    }
+
+
+    int pocet;
+    if(fscanf(vstup, "%d", &pocet) != 1){
+      printf("Nenacteno...");
+      return -2;
+    }
+
+    TZAK trida[pocet];
+
+    pocet=nacti(trida, pocet, vstup);
+    printf("Pocet: %d\n\n", pocet);
+
+    printf("POLE STRUKTUR: \n--------------------------------------------------------\n");
+    vypis(trida, pocet);
+    printf("\n\n");
+    serad(trida, pocet);
+    printf("SERAZENE OD NEJHORSIHO PODLE FYZIKY: \n-------------------------------------------------------\n");
+    vypis(trida, pocet);
+
+
+    int pozice=najdiZaka(trida, pocet, 0);
+    if(pozice == -1){
+      printf("Nenasel....");
+    }
+    else{
+      printf("\n\nChlapec s nejhorsi znamkou z fyziky je %s a ma %d", trida[pozice].jmeno, trida[pozice].f);
+    }
+
+
+
+    fclose(vstup);
+    return 0;
+}

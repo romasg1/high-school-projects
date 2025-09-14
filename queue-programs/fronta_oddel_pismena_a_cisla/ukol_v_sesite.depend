@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1700055868 source:c:\users\rgrme\onedrive\desktop\jazyk_c\ivt 2023-2024\ukol_v_sesite\main.c
+	"gvid.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+
+1672245803 c:\users\rgrme\onedrive\desktop\jazyk_c\ivt 2023-2024\ukol_v_sesite\gvid.h
+
+1700055870 source:c:\users\rgrme\onedrive\desktop\programming\gvid_projects-important-on-github\jazyk_c_projects_school\fronta_oddel_pismena_a_cisla\main.c
+	"gvid.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+
+1672245804 c:\users\rgrme\onedrive\desktop\programming\gvid_projects-important-on-github\jazyk_c_projects_school\fronta_oddel_pismena_a_cisla\gvid.h
+

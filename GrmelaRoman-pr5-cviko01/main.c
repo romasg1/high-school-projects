@@ -1,0 +1,125 @@
+/*
+ * Projekt: ukazatele - rozdel cisla do 2 souboru
+ * Autor: Roman Grmela
+ * Datum: 1.11. 2023
+ */
+
+#include "gvid.h"       // par drobnosti pro zjednoduseni prace
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>  // pro praci s textovymi retezci
+#include <stdbool.h> // pro praci s typem bool a konstantami true a false
+
+
+typedef struct {
+float *prvek; // dynamické pole
+int delka;
+} Tpole;
+
+
+Tpole * nacti(FILE *vstup){
+  int pocet;
+  if(fscanf(vstup, "%d", &pocet) != 1){
+    printf("Nenacetl...\n");
+    return NULL;
+  }
+  //printf("%d\n", pocet);
+
+  Tpole* novePole = malloc(sizeof(Tpole));
+  if(novePole == NULL){
+    printf("Chyba alokace..\n");
+    return NULL;
+  }
+
+  novePole->prvek=malloc(pocet*sizeof(float));
+  if(novePole->prvek == NULL){
+    printf("Chyba alokace..\n");
+    free(novePole);
+    return NULL;
+  }
+
+  novePole->delka=pocet;
+
+  for(int i=0; i<pocet; i++){
+    if(fscanf(vstup, "%f", &novePole->prvek[i]/*!!!!!!!!!*/) != 1){
+      printf("Konec nacitani..\n");
+      break; //muze se hodit
+    }
+  }
+  return novePole;
+}
+
+
+float prumer(Tpole* pole){
+   float sum=0.0; //NEZAPOMEN INICIALIOVAT
+  for(int i=0; i<pole->delka; i++){
+    sum=sum+pole->prvek[i]; //NE pole[i]->prvek !!!!!!!!!!!!!!!!!!
+  }
+  return sum/pole->delka;
+}
+
+void pocitadlo(int* pod, int* nad, Tpole* p, float hranice){
+/**pod = 0;
+*nad = 0;...nemusim*/
+for(int i=0; i<p->delka; i++){
+  if(p->prvek[i]<hranice){
+    *pod=*pod+1; //NEFUNGOVALO S *POD++;     !!!!!!!!!!!!!!!§
+  }
+  else{
+    *nad=*nad+1;
+  }
+}
+}
+
+
+void rozdel(FILE *f1, FILE *f2,
+Tpole *p, float hranice){
+  int pocetPod=0;
+  int pocetNad=0;
+  pocitadlo(&pocetPod, &pocetNad, p, hranice);
+  //printf("%d\n\n", pocetPod);
+  fprintf(f1, "%d\n", pocetPod);
+  fprintf(f2, "%d\n", pocetNad);
+
+  for(int i=0; i<p->delka; i++){
+    if(p->prvek[i]<hranice){
+      fprintf(f1, "%.2f\n", p->prvek[i]);
+    }
+    else{
+      fprintf(f2, "%.2f\n", p->prvek[i]);
+    }
+  }
+}
+
+
+int main(void)
+{
+
+  FILE* vstup = fopen("data10k.txt", "r");
+  FILE* vystup1 = fopen("podprumerny.txt", "w");
+  FILE* vystup2 = fopen("nadprumerny.txt", "w");
+
+  if(vstup == NULL || vystup1 == NULL || vystup2 == NULL){
+    printf("Neotevrel..\n");
+    return -1;
+  }
+
+  Tpole* mojePole=nacti(vstup);
+  if(mojePole == NULL){
+    printf("Bohuzel nealokovano spravne..\n");
+    return -2;
+  }
+
+  float prumernaHodnota=prumer(mojePole);
+  printf("Prumer: %.2f\n", prumernaHodnota);
+
+  rozdel(vystup1, vystup2, mojePole, prumernaHodnota);
+
+
+  fclose(vstup);
+  fclose(vystup1);
+  fclose(vystup2);
+  free(mojePole->prvek);
+  free(mojePole);
+  return 0;
+}

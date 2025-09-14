@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1700763633 source:c:\users\rgrme\onedrive\desktop\programov¡nÕ\prvne_slova_velka\main.c
+	"gvid.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+
+1672242203 c:\users\rgrme\onedrive\desktop\programov¡nÕ\prvne_slova_velka\gvid.h
+
+1700768513 source:c:\users\rgrme\onedrive\desktop\jazyk_c\ivt 2023-2024\prvne_slova_velka\main.c
+	"gvid.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+
+1672245803 c:\users\rgrme\onedrive\desktop\jazyk_c\ivt 2023-2024\prvne_slova_velka\gvid.h
+
+1700768514 source:c:\users\rgrme\onedrive\desktop\programming\gvid_projects-important-on-github\jazyk_c_projects_school\fronta_vypis_prvne_velka_pismena\main.c
+	"gvid.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+
+1672245804 c:\users\rgrme\onedrive\desktop\programming\gvid_projects-important-on-github\jazyk_c_projects_school\fronta_vypis_prvne_velka_pismena\gvid.h
+

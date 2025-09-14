@@ -1,0 +1,34 @@
+# ZDE CHYBI SPRAVNA ODPOVED....
+Nazev: Test NJ 01
+Otazka 1zN: Jake je hlavni mesto Nemecka?
+#TODO: vyber spravnou odpoved..
+Hodnota: 5
+Spatne: Mnichov
+Spatne: Hamburk
+Spatne: Oslo
+
+Otazka 1zN: Jaky je minuly tvar v nemcine pro sloveso "gehen" (jit)?
+Hodnota: 10
+Spravne: ging
+Spatne: geeeeh
+Spatne: gehe
+Spatne: geht
+Otazka 1zN: Preloz slovo pes do nemciny.
+Hodnota: 5
+Spravne: der Hund
+Spatne: die Katze
+Spatne: der Kellner
+Spatne: das Poster
+#textova otazka...
+Otazka text: Jak se rekne nemecky pes?
+Hodnota: 5
+Spravne: Hund
+Spravne: der Hund
+Spravne: hund
+Spravne: der hund
+Otazka text: Jak se rekne nemecky kocka?
+Hodnota: 5
+Spravne: Katze
+Spravne: die Katze
+Spravne: katze
+Spravne: die katze
